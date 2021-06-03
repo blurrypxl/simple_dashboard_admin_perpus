@@ -1,0 +1,119 @@
+/* Ubuntu Font */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+
+  --colorWhite: white;
+  --colorPrimary: #13131C;
+  --colorSecondary: #252731;
+}
+
+.container {
+  border: 1px solid red;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: var(--colorSecondary);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "navbar konten konten konten konten";
+}
+
+/* Navigasi Bar */
+.sideNav {
+  border: 1px solid royalblue;
+  border-radius: 0 50px 50px 0;
+  background-color: var(--colorPrimary);
+  grid-area: navbar;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+.sideNav .logo {
+  margin: 30px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.sideNav .logo a {
+  text-decoration: none;
+  color: var(--colorWhite);
+  font-weight: 800;
+  font-size: 1.8em;
+}
+.sideNav .nav {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-transform: uppercase;
+  grid-area: span 3; /* Mengatur class nav menjadi 4 row */
+}
+/*
+* Active Navbar Link Class - START
+* TODO: Memasukan gambar sebagai penanda link aktif
+*/
+.sideNav .nav .list {
+  border: 1px solid white;
+  margin: 2em 0;
+  text-decoration: none;
+  color: var(--colorWhite);
+  font-weight: 700;
+  font-size: 0.8em;
+}
+.sideNav .nav .list::after {
+  content: "";
+  background-color: var(--colorSecondary);
+}
+/* Active Navbar Link Class - END */
+.sideNav .profilBar {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  grid-area: span 5;
+}
+.sideNav .profilBar p {
+  text-transform: uppercase;
+  color: white;
+  font-size: 0.7em;
+}
+
+/* Class Button */
+.btn {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(190, 22, 22);
+  box-shadow: 0 4px 0 0 rgb(133, 15, 15);
+  text-transform: uppercase;
+  color: var(--colorWhite);
+  padding: 5px 10px;
+}
+.btn:hover {
+  background-color: rgb(212, 25, 25);
+  box-shadow: 0 4px 0 0 rgb(158, 18, 18);
+}
+.btn:active {
+  background-color: rgb(212, 25, 25);
+  box-shadow: 0 2px 0 0 rgb(158, 18, 18);
+  transform: translateY(2px);
+}
+
+/* Class Gap 10px */
+.gap-10 {
+  margin: 10px 0;
+}
+
+/* Content */
+.contentBox {
+  border: 1px solid rgb(196, 2, 255);
+  grid-area: konten;
+}
